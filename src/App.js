@@ -72,6 +72,8 @@ const App = () => {
     ) {
       setWinMessage(`${itemArray[2]} Wins`);
     }
+
+    noOneWin();
   };
 
   const changeItem = (itemNumber) => {
@@ -86,21 +88,23 @@ const App = () => {
       return toast("already filled", { type: "error" });
     }
 
+    checkIsWinner();
+  };
+
+  const noOneWin = () => {
     if (
-      itemArray[0] &&
-      itemArray[1] &&
-      itemArray[2] &&
-      itemArray[3] &&
-      itemArray[4] &&
-      itemArray[5] &&
-      itemArray[6] &&
-      itemArray[7] &&
+      itemArray[0] !== "empty" &&
+      itemArray[1] !== "empty" &&
+      itemArray[2] !== "empty" &&
+      itemArray[3] !== "empty" &&
+      itemArray[4] !== "empty" &&
+      itemArray[5] !== "empty" &&
+      itemArray[6] !== "empty" &&
+      itemArray[7] !== "empty" &&
       itemArray[8] !== "empty"
     ) {
       setWinMessage("No One Wins");
     }
-
-    checkIsWinner();
   };
 
   return (
