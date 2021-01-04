@@ -86,6 +86,20 @@ const App = () => {
       return toast("already filled", { type: "error" });
     }
 
+    if (
+      itemArray[0] &&
+      itemArray[1] &&
+      itemArray[2] &&
+      itemArray[3] &&
+      itemArray[4] &&
+      itemArray[5] &&
+      itemArray[6] &&
+      itemArray[7] &&
+      itemArray[8] !== "empty"
+    ) {
+      setWinMessage("No One Wins");
+    }
+
     checkIsWinner();
   };
 
